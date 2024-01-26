@@ -11,10 +11,10 @@
         "cpu",
         "memory",
         "disk",
+     "image", "custom/mediaplayer"
         // "custom/weather",
   //  "hyprland/workspaces",
-    "custom/playerctl", 
-    "custom/playerlabel"
+    // "custom/playerctl", "custom/playerlabel"
 	
     ],
     "modules-center": ["hyprland/workspaces"],
@@ -73,6 +73,24 @@
           }
     },
 
+"image": {
+  "path": "/tmp/waybar-mediaplayer-art",
+  "size": 32,
+  "signal": 4,
+  "on-click": "feh --auto-zoom --borderless --title 'feh-float' /tmp/waybar-mediaplayer-art"
+},
+
+"custom/mediaplayer": {
+    "exec": "$HOME/.config/waybar/waybar-mediaplayer/src/mediaplayer monitor",
+    "return-type": "json",
+    "format": "{}",
+    "on-click": "$HOME/.config/waybar/waybar-mediaplayer/src/mediaplayer play-pause",
+    "on-scroll-up": "$HOME/.config/waybar/waybar-mediaplayer/src/mediaplayer next",
+    "on-scroll-down": "$HOME/.config/waybar/waybar-mediaplayer/src/mediaplayer previous",
+    "min-length": 20,
+    "max-length": 20
+},
+  /*
     "custom/playerctl": {
       "format": "{icon}",
       "return-type": "json",
@@ -100,7 +118,7 @@
         "Paused": "<span foreground='#928374'>󰒮 󰏥 󰒭</span>"
       },
     },
- 
+ */
     
      "cpu": {
          "interval": 5,
@@ -208,7 +226,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", "󰕾", ""]
+            "default": ["", "", "󰕾"]
         }
     },
     "pulseaudio#microphone": {
@@ -217,8 +235,8 @@
         "format-source": " {volume}%",
         "format-source-muted": " Muted",
         "on-click": "pamixer --default-source -t",
-        "on-scroll-up": "pamixer --default-source -i 5",
-        "on-scroll-down": "pamixer --default-source -d 5",
+        "on-scroll-up": "pamixer --default-source -i 1",
+        "on-scroll-down": "pamixer --default-source -d 1",
         "scroll-step": 5
     },
 

@@ -283,6 +283,14 @@ window#waybar {
     font-weight: bold;
 }
 
+#custom-mediaplayer
+{
+  font-size: 16px;
+  border-radius: 2%;
+}
+@import "./waybar-mediaplayer/src/mediaplayer-progressbar.css";
+
+
 #custom-hyprpicker {
     background-color: @bg-color-secondary;
     /*color: #8EC07C;*/
