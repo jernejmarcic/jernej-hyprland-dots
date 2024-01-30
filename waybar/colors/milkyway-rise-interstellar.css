@@ -1,0 +1,23 @@
+/* Primary Color Definitions for "Milky Rise" Theme */
+@define-color bg-color-primary rgba(25, 35, 55, 0.5); /* Dark cosmic blue */
+@define-color bg-color-secondary rgba(18, 24, 42, 1); /* Deep space blue */
+@define-color text-color-primary rgba(186, 215, 242, 1); /* Soft starlight blue */
+@define-color muted-text-color rgba(108, 122, 137, 1); /* Distant galaxy grey */
+@define-color text-color-secondary rgba(136, 172, 224, 1); /* Light nebula blue */
+@define-color power-text-color rgba(230, 230, 250, 1); /* Light astral lavender */
+@define-color power-bg-color rgba(69, 83, 122, 1); /* Dark nebula indigo */
+
+/* Additional Accent and Background Colors for Customization */
+@define-color accent-color-cosmic-dust rgba(129, 121, 162, 1); /* Cosmic dust purple */
+@define-color accent-color-stellar-gold rgba(255, 189, 105, 1); /* Stellar gold for vibrant accents */
+@define-color accent-color-void-black rgba(0, 0, 0, 1); /* Void black for deep contrast */
+@define-color accent-color-astro-green rgba(114, 222, 116, 1); /* Astro green for complementary highlights */
+@define-color accent-color-solar-flare rgba(255, 125, 60, 1); /* Solar flare orange for warning elements */
+@define-color bg-color-stardust rgba(44, 52, 81, 0.7); /* Stardust background for secondary elements */
+
+/* Battery colors from the Cosmic Energy theme */
+@define-color battery-color #9ece6a; /* Energetic green */
+@define-color battery-warning-bg-color #f7768e; /* Warning pink */
+
+/* Naming the theme */
+

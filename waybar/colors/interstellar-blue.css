@@ -1,0 +1,22 @@
+/* Nebula Blue Color Theme */
+@define-color bg-color-primary rgba(25, 35, 55, 0.5); /* Primary background color, a darker shade of blue */
+@define-color bg-color-secondary rgba(18, 24, 42, 1); /* Secondary background color, even darker for contrast */
+@define-color text-color-primary rgba(186, 215, 242, 1); /* Primary text color, a soft blue reminiscent of the wallpaper's glow */
+@define-color muted-text-color rgba(108, 122, 137, 1); /* Inactive workspace color, a muted blue */
+@define-color text-color-secondary rgba(136, 172, 224, 1); /* Workspace hover color, a brighter blue for highlights */
+@define-color power-text-color rgba(230, 230, 250, 1); /* Power text color, a light lavender for visibility */
+@define-color power-bg-color rgba(69, 83, 122, 1); /* Power background color, a strong indigo to stand out */
+/* Retain the battery colors from the Cosmic Energy theme */
+@define-color battery-color #9ece6a; /* Battery icon color, green signifies energy and is a complementary color to blue */
+@define-color battery-warning-bg-color #f7768e; /* Battery warning background, pink as a universal warning color */
+
+
+/* Nebula Blue Color Theme Extensions with Purple/Violet Borders */
+/* Nebula Blue Color Theme Extensions with Electric Pink Borders */
+@define-color border-color-primary rgba(255, 105, 180, 0.8); /* Primary border color, a bright electric pink */
+@define-color border-color-secondary rgba(255, 20, 147, 1); /* Secondary border color, a deeper shade of pink */
+@define-color accent-color-aquporgramingatic rgba(95, 205, 228, 1); /* Aquatic accent, a cyan reminiscent of Earth's water */
+@define-color accent-color-astro rgba(255, 184, 108, 1); /* Astro accent, a warm orange like distant starlight */
+@define-color highlight-color-void rgba(28, 30, 48, 1); /* Void highlight, a deep blue-black of space */
+@define-color accent-color-stellar rgba(239, 68, 108, 1); /* Stellar accent, a vibrant pink of cosmic nebulae */
+

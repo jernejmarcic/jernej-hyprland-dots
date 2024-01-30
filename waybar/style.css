@@ -1,14 +1,7 @@
-@define-color bg-color-primary rgba(40, 40, 40, 0.5); /* Primary background color */
-@define-color bg-color-secondary #282828; /* Secondary background color */
-@define-color text-color-primary #f4d9e1; /* Primary text color */
-@define-color muted-text-color #928374; /* Inactive workspace color */
-@define-color text-color-secondary #E6B9C6; /* Workspace hover color */
-@define-color power-text-color #24283b; /* Power text color */
-@define-color power-bg-color rgba(219, 75, 75, 1); /* Power background color */
-@define-color battery-color #9ece6a; /* Battery icon color */
-@define-color battery-warning-bg-color #f7768e; /* Battery warning background */
 
-
+/* @import './colors/interstellar-pink.css'; */
+@import './colors/interstellar-blue.css';
+/* @import './colors/celestial-blaze.css'; */
 
 * {
     border: none;
@@ -29,13 +22,15 @@ window#waybar {
 
 #workspaces {
 	background: @bg-color-secondary;
-	margin: 5px 5px 5px 5px;
+	margin: 5px 15px 5px 15px;
   padding: 0px 5px 0px 5px;
+         box-shadow: 0 0 5px 0px @border-color-primary; /* Pink glow */
+
 	border-radius: 16px;
-  border: solid 0px @text-color-primary;
+  border: solid 1px @border-color-primary;
   font-weight: normal;
   font-style: normal;
-}
+ }
 #workspaces button {
     padding: 0px 5px;
     border-radius: 16px;
@@ -54,12 +49,11 @@ window#waybar {
 	border-radius: 16px;
 }
 
-#custom-date, #clock, #pulseaudio, #custom-randwall, #custom-launcher{
+#custom-date, #clock, #pulseaudio, #custom-randwall, #custom-launcher, #battery, #battery.icon{
 	background: @bg-color-primary;
 	padding: 0px 0px 0px 0px;
 	margin: 0px 0px 0px 0px;
- /* border-radius: 8px;
-  border: solid 0px @text-color-primary;
+ /* border-bottom: solid 1px @border-color-primary;
 */
 }
 
@@ -85,9 +79,9 @@ window#waybar {
 #clock {
     color: @text-color-secondary;
     background-color: @bg-color-secondary;
-    border-radius: 0px 0px 20px 0px;
+    border-radius: 0px 0px 0px 0px;
     padding-left: 4px;
-    padding-right: 16px;
+    padding-right: 6px;
     margin-right: 0px;
     margin-left: 0px;
     margin-top: 0px;
@@ -97,38 +91,18 @@ window#waybar {
 }
 
 
-#battery {
-    color: @battery-color;
-        background-color: @bg-color-secondary;
-
-      border-radius: 0px 0px 0px 20px;
-    padding-left: 8px;
-    padding-right: 6px;
-    margin-right: 0px;
-    margin-left: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-
-#battery.icon {
-  background-color: @bg-color-secondary;
-    border-radius: 0px 0px 0px 0px;
+#clock.calendar {
+    color: @text-color-secondary;
+    background-color: @bg-color-secondary;
+    border-radius: 0px 0px 20px 0px;
     padding-left: 0px;
-    padding-right: 6px;
+    padding-right: 16px;
     margin-right: 0px;
     margin-left: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
-}
-
-#battery.charging {
-    color: @battery-color;
-}
-
-#battery.warning:not(.charging) {
-    background-color: #f7768e;
-    color: @power-text-color;
-    border-radius: 5px 5px 5px 5px;
+    font-weight: bold;
+    /*border-left: solid 1px #282738;*/
 }
 
 
@@ -142,7 +116,9 @@ window#waybar {
     margin-left: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
-
+ /*   border-bottom: solid 1px  @border-color-primary;
+    border-left: solid 1px  @border-color-primary;
+*/
 }
 
 #network.wifistrenght {
@@ -153,6 +129,8 @@ window#waybar {
     margin-left: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
+    border-left: none;
+
 }
 
 
@@ -164,6 +142,53 @@ window#waybar {
     padding-left: 4px;
     padding-right: 8px;
     padding: 0px 0px;
+/*    border-bottom: solid 1px  @border-color-primary;
+      border-right: none;
+*/
+}
+
+#battery {
+    color: @battery-color;
+        background-color: @bg-color-secondary;
+/*    border-bottom: solid 1px  @border-color-primary;
+  border-bottom-left-radius: 20px;
+*/
+      border-radius: 0px 0px 0px 20px;
+    padding-left: 8px;
+    padding-right: 6px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+}
+
+#battery.icon {
+  background-color: @bg-color-secondary;
+    border-radius: 0px 0px 0px 0px;
+    padding-left: 0px;
+    padding-right: 6px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+/*  border-bottom: solid 1px  @border-color-primary;
+*/
+}
+
+#battery.charging {
+    color: @battery-color;
+}
+
+#battery.warning:not(.charging) {
+    background-color: #f7768e;
+    color: @power-text-color;
+    border-radius: 5px 5px 5px 5px;
+}
+
+#pulseaudio, #battery {
+/*  border-bottom: solid 1px @border-color-primary;
+*/
 }
 
 
@@ -171,12 +196,25 @@ window#waybar {
     color: @text-color-primary;
   padding-left: 4px;
   padding-right: 4px;
+/*  border-bottom: solid 1px  @border-color-primary;
+  border-right: none;
+      border-bottom: solid 1px  @border-color-primary;
+*/
 }
+
 
 #pulseaudio.muted {
     color: @muted-text-color;
   padding-right: 4px;
+/*  border-bottom: solid 1px  @border-color-primary;
+    border-bottom: solid 1px  @border-color-primary;
+
+*/
+
 }
+
+
+
 /*
 #custom-randwall {
     color: @text-color-primary;
@@ -285,8 +323,10 @@ window#waybar {
 
 #custom-mediaplayer
 {
-  font-size: 16px;
-  border-radius: 2%;
+  font-size: 14px;
+  border-radius: 0px 10px 10px 0px;
+  margin-top: 2px;
+  margin-bottom: 2px
 }
 @import "./waybar-mediaplayer/src/mediaplayer-progressbar.css";
 

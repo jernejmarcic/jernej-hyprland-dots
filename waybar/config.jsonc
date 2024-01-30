@@ -8,6 +8,7 @@
     "height": 0,
     "modules-left": [
     "clock",
+    "clock#calendar",
         "cpu",
         "memory",
         "disk",
@@ -19,6 +20,7 @@
     ],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": [
+        "custom/weather",
         "tray",
         "network",
         "network#wifistrenght",
@@ -38,36 +40,59 @@
     "hyprland/workspaces": {
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1",
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "6": "6",
-            "7": "7",
-            "8": "8",
-            "9": "9",
-            "0": "10",
+    // Icons for 20 workspaces? Why wou may ask, Why not I anwser.
+    "1": "1",
+    "2": "2",
+    "3": "3",
+    "4": "4",
+    "5": "5",
+    "6": "6",
+    "7": "7",
+    "8": "8",
+    "9": "9",
+    "10": "10",
+    "11": "11",
+    "12": "12",
+    "13": "13",
+    "14": "14",
+    "15": "15",
+    "16": "16",
+    "17": "17",
+    "18": "18",
+    "19": "19",
+    "20": "20",
+
 
 
         "all-outputs": true,
         "on-click": "activate",
         "format": "{icon}",
         "format-icons": {
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "6": "6",
-            "7": "7",
-            "8": "8",
-            "9": "9",
-            "0": "10",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
+      "11": "11",
+      "12": "12",
+      "13": "13",
+      "14": "14",
+      "15": "15",
+      "16": "16",
+      "17": "17",
+      "18": "18",
+      "19": "19",
+      "20": "20",
+
+ 
 
 
-
-            "urgent": "",
+            "urgent": "<span color='#dd532e'></span>", // The explamation point is now red to draw more attention to it
             // "active": "",
             "default": ""
           }
@@ -75,7 +100,7 @@
 
 "image": {
   "path": "/tmp/waybar-mediaplayer-art",
-  "size": 32,
+  "size": 30,
   "signal": 4,
   "on-click": "feh --auto-zoom --borderless --title 'feh-float' /tmp/waybar-mediaplayer-art"
 },
@@ -160,7 +185,7 @@
     "backlight": {
         "exec": "light -G",
         "format": "| {percent}% {icon}  |",
-        "format-icons": //note you can only have one icon set actiave at a time, commnt out the one you are not using 
+        "format-icons": //note you can only have one icon set actiave at a time, commnet out the one you are not using 
     // ["", "", "", "", "", "", "", "", ""] //moonphase icons
     ["󰛩","󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󰛨"] //lightblulb icons
   },
@@ -176,13 +201,17 @@
  //        "format": " {}",
  //        "tooltip": false
  //    },
- //   "custom/weather" : {
- //       "tooltip" : true,
- //       "format" : "{}",
- //       "restart-interval" : 300,
- //       "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
- //       "return-type" : "json"
- //   },
+
+
+  "custom/weather": {
+    "format": "{} °",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar --location Ljubljana",
+    "on-click": "kweather",
+    "return-type": "json"
+},
+
     "tray": {
         "icon-size": 13,
         "tooltip": false,
@@ -190,8 +219,15 @@
     },
     "clock": {
 	"interval": 1,
-       "format": "󰅐  {:%R:%S    %d/%m}",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+       "format": "󰅐  {:%R:%S}",
+                
+    },
+
+  "clock#calendar":{
+    "interval": 96,
+    "format": "  {:%d/%m}",
+    "tooltip":true,
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
                     "mode"          : "year",
                     "mode-mon-col"  : 3,
@@ -206,8 +242,8 @@
                               "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
                               }
                     },
-        
-    },
+
+  },
 
     
 
@@ -270,8 +306,20 @@
     "<span color='#9ece6a'>󰂂</span>", // green for full charge
     "<span color='#dd532e'>󰂃</span>"  // red for 100% charged
 ],
+      "charging": [
+        "<span color='#dd532e'>󰢟</span>", // Use the charging icon with the color for the lowest charge
+        "<span color='#dd532e'>󰢜</span>", // Another color for a slightly higher charge
+        "<span color='#ff9977'>󰂆</span>", // Orange for medium-low charge
+        "<span color='#ffffa5'>󰂇</span>", // Yellow for medium charge
+        "<span color='#ffffa5'>󰂈</span>", // Yellow for medium-high charge
+        "<span color='#ffffa5'>󰢝</span>", // Another yellow for medium-high charge
+        "<span color='#9ece6a'>󰂉</span>", // Green for higher charge
+        "<span color='#9ece6a'>󰢞</span>", // Green for even higher charge
+        "<span color='#9ece6a'>󰂊</span>", // Green for full charge or nearly full
+        "<span color='#9ece6a'>󰂋</span>", // Green for full charge
+        "<span color='#dd532e'>󰂅</span>"  // Red for 100% charged and plugged in
+    ]
     
-    "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
     },
     "format-charging": "{icon}",
     "format-plugged": "{capacity}% ",

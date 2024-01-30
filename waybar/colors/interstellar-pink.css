@@ -1,0 +1,11 @@
+@define-color bg-color-primary rgba(40, 40, 40, 0.5); /* Primary background color */
+@define-color bg-color-secondary #282828; /* Secondary background color */
+@define-color text-color-primary #f4d9e1; /* Primary text color */
+@define-color muted-text-color #928374; /* Inactive workspace color */
+@define-color text-color-secondary #E6B9C6; /* Workspace hover color */
+@define-color power-text-color #24283b; /* Power text color */
+@define-color power-bg-color rgba(219, 75, 75, 1); /* Power background color */
+@define-color battery-color #9ece6a; /* Battery icon color */
+@define-color battery-warning-bg-color #f7768e; /* Battery warning background */
+
+
