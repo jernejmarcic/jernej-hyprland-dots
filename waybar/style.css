@@ -79,14 +79,13 @@ window#waybar {
 #clock {
     color: @text-color-secondary;
     background-color: @bg-color-secondary;
-    border-radius: 0px 0px 0px 0px;
-    padding-left: 4px;
-    padding-right: 6px;
-    margin-right: 0px;
-    margin-left: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    border: 1px solid @border-color-primary;
+    border-right: none;
+    border-radius: 20px 0px 0px 10px;
+    padding: 0px 10px 0px 10px;
+    margin: 5px 0px 5px 0px;
     font-weight: bold;
+    
     /*border-left: solid 1px #282738;*/
 }
 
@@ -94,13 +93,11 @@ window#waybar {
 #clock.calendar {
     color: @text-color-secondary;
     background-color: @bg-color-secondary;
-    border-radius: 0px 0px 20px 0px;
-    padding-left: 0px;
-    padding-right: 16px;
-    margin-right: 0px;
-    margin-left: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+  border: 1px solid @border-color-primary;
+  border-left: none;
+    border-radius: 0px 10px 20px 0px;
+    padding: 0px 10px 0px 0px;
+    margin: 5px 0px 5px 0px;
     font-weight: bold;
     /*border-left: solid 1px #282738;*/
 }
@@ -150,28 +147,25 @@ window#waybar {
 #battery {
     color: @battery-color;
         background-color: @bg-color-secondary;
+        border: 1px solid @border-color-primary;
+    border-right: none;
+    border-radius: 10px 0px 0px 20px;
+    padding: 0px 10px 0px 10px;
+    margin: 5px 0px 5px 0px;
 /*    border-bottom: solid 1px  @border-color-primary;
   border-bottom-left-radius: 20px;
 */
-      border-radius: 0px 0px 0px 20px;
-    padding-left: 8px;
-    padding-right: 6px;
-    margin-right: 0px;
-    margin-left: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
 
 }
 
 #battery.icon {
   background-color: @bg-color-secondary;
-    border-radius: 0px 0px 0px 0px;
-    padding-left: 0px;
-    padding-right: 6px;
-    margin-right: 0px;
-    margin-left: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+
+      border: 1px solid @border-color-primary;
+  border-left: none;
+    border-radius: 0px 20px 10px 0px;
+    padding: 0px 10px 0px 0px;
+    margin: 5px 0px 5px 0px;
 /*  border-bottom: solid 1px  @border-color-primary;
 */
 }
@@ -289,13 +283,11 @@ window#waybar {
 */
 #cpu {
     background-color:@bg-color-primary;
-    /*color: #FABD2D;*/
-    margin: 0px;
-    margin-left: 0px;
-  padding-left: 8px;
-  padding-right: 16px;
-    margin-right: 0px;
-    padding: 0px 0px 0px 0px;
+     border: 1px solid @bg-color-secondary;
+    border-right: none;
+    border-radius: 20px 0px 0px 10px;
+    padding: 0px 5px 0px 5px;
+    margin: 5px 0px 5px 5px;
     font-weight: bold;
 }
 
