@@ -98,7 +98,8 @@
           }
     },
 
-"image": {
+
+  "image": {
   "path": "/tmp/waybar-mediaplayer-art",
   "size": 30,
   "signal": 4,
@@ -115,7 +116,7 @@
     "min-length": 20,
     "max-length": 20
 },
-  /*
+   /*
     "custom/playerctl": {
       "format": "{icon}",
       "return-type": "json",

@@ -320,7 +320,7 @@ window#waybar {
   margin-top: 2px;
   margin-bottom: 2px
 }
-@import "./waybar-mediaplayer/src/mediaplayer-progressbar.css";
+@import "./waybar-mediaplayer/src/style.css";
 
 
 #custom-hyprpicker {
