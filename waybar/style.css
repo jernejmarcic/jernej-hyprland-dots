@@ -102,36 +102,60 @@ window#waybar {
     /*border-left: solid 1px #282738;*/
 }
 
-
-
+/*
 #network {
   background: @bg-color-primary;
-   border-radius: 0px 0px 0px 20px;
-    padding-left: 8px;
-    padding-right: 10px;
-    margin-right: 0px;
-    margin-left: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
- /*   border-bottom: solid 1px  @border-color-primary;
-    border-left: solid 1px  @border-color-primary;
-*/
+        border: 1px solid @border-color-secondary;
+        border-right: none;
+  border-radius: 10px 0px 0px 20px;
+   margin: 5px 0px 5px 0px;
+    padding: 5px 0px 5px 0px;
+
 }
 
 #network.wifistrenght {
+  border-left: none;
+   border-radius: 0px 0px 0px 0px;
+   margin: 5px 0px 5px 0px;
+    padding: 5px 0px 5px 0px;
+
+}
+*/
+
+#network {
+    background-color:@bg-color-primary;
+    border: 1px solid @border-color-secondary;
+    border-right: none;
+    border-radius: 10px 0px 0px 20px;
+    padding: 0px 10px 0px 10px;
+    margin: 5px 0px 5px 15px;
+}
+
+#network.wifistrenght {
+    background-color:@bg-color-primary;
+        border: 1px solid @border-color-secondary;
         border-radius: 0px 0px 0px 0px;
-    padding-left: 4px;
-    padding-right: 6px;
-    margin-right: 0px;
-    margin-left: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    border-right: none;
     border-left: none;
+    /*color: #FABD2D;*/
+    padding: 0px 5px 0px 0px;
+     margin: 5px 0px 5px 0px;
 
 }
 
+#backlight {
+    background-color: @bg-color-primary;
+        border: 1px solid @border-color-secondary;
+    border-left: none;
+    border-right: none;
+    /*color: #83A598;*/
+    border-radius: 0px 0px 0px 0px;
+    padding: 0px 5px 0px 5px;
+     margin: 5px 0px 5px 0px;
 
+}
 
+/*
 #backlight {
     background: @bg-color-primary;
     color: @text-color-primary;
@@ -139,10 +163,8 @@ window#waybar {
     padding-left: 4px;
     padding-right: 8px;
     padding: 0px 0px;
-/*    border-bottom: solid 1px  @border-color-primary;
-      border-right: none;
-*/
 }
+*/
 
 #battery {
     color: @battery-color;
@@ -151,7 +173,7 @@ window#waybar {
     border-right: none;
     border-radius: 10px 0px 0px 20px;
     padding: 0px 10px 0px 10px;
-    margin: 5px 0px 5px 0px;
+    margin: 5px 0px 5px 15px;
 /*    border-bottom: solid 1px  @border-color-primary;
   border-bottom-left-radius: 20px;
 */
@@ -164,8 +186,8 @@ window#waybar {
       border: 1px solid @border-color-primary;
   border-left: none;
     border-radius: 0px 20px 10px 0px;
-    padding: 0px 10px 0px 0px;
-    margin: 5px 0px 5px 0px;
+    padding: 0px 7px 0px 0px;
+    margin: 5px 5px 5px 0px;
 /*  border-bottom: solid 1px  @border-color-primary;
 */
 }
@@ -180,30 +202,41 @@ window#waybar {
     border-radius: 5px 5px 5px 5px;
 }
 
-#pulseaudio, #battery {
-/*  border-bottom: solid 1px @border-color-primary;
-*/
-}
-
 
 #pulseaudio {
     color: @text-color-primary;
-  padding-left: 4px;
-  padding-right: 4px;
-/*  border-bottom: solid 1px  @border-color-primary;
-  border-right: none;
-      border-bottom: solid 1px  @border-color-primary;
-*/
+          border: 1px solid @border-color-secondary;
+ border-radius: 0px 0px 0px 0px;
+    border-left: none;
+    border-right: none;
+    padding: 0px 5px 0px 0px;
+     margin: 5px 0px 5px 0px;
+}
+
+#pulseaudio.microphone {
+  border: 1px solid @border-color-secondary;
+  border-left: none;
+   border-radius: 0px 20px 10px 0px;
+   padding: 0px 5px 0px 0px;
+
 }
 
 
 #pulseaudio.muted {
-    color: @muted-text-color;
-  padding-right: 4px;
-/*  border-bottom: solid 1px  @border-color-primary;
-    border-bottom: solid 1px  @border-color-primary;
+     color: @muted-text-color;
+    border-left: none;
+    border-right: none;
+       border-radius: 0px 0px 0px 0px;
+  padding: 0px 5px 0px 0px;
+     margin: 5px 0px 5px 0px;
 
-*/
+}
+
+#pulseaudio.microphone.muted {
+    color: @muted-text-color;
+     border: 1px solid @border-color-secondary;
+    border-left: none;
+       border-radius: 0px 20px 10px 0px;
 
 }
 
@@ -283,42 +316,45 @@ window#waybar {
 */
 #cpu {
     background-color:@bg-color-primary;
-     border: 1px solid @bg-color-secondary;
+    border: 1px solid @border-color-secondary;
     border-right: none;
     border-radius: 20px 0px 0px 10px;
-    padding: 0px 5px 0px 5px;
-    margin: 5px 0px 5px 5px;
+    padding: 0px 0px 0px 10px;
+    margin: 5px 0px 5px 15px;
     font-weight: bold;
 }
 
 #memory {
     background-color:@bg-color-primary;
+        border: 1px solid @border-color-secondary;
+    border-right: none;
+    border-left: none;
     /*color: #FABD2D;*/
-    margin: 0px;
-    margin-left: 0px;
-  padding-left: 16px;
-  padding-right: 2px;
-    margin-right: 0px;
-    padding: 0px 0px 0px 0px;
+    padding: 0px 5px 0px 0px;
+     margin: 5px 0px 5px 0px;
+
     font-weight: bold;
 }
 
 #disk {
     background-color: @bg-color-primary;
+        border: 1px solid @border-color-secondary;
+    border-left: none;
     /*color: #83A598;*/
-   border-radius: 0px 0px 20px 0px;
-    margin-left: 0px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
+    border-radius: 0px 10px 20px 0px;
+    padding: 0px 5px 0px 5px;
+     margin: 5px 15px 5px 0px;
+
     font-weight: bold;
 }
 
 #custom-mediaplayer
 {
   font-size: 14px;
-  border-radius: 0px 10px 10px 0px;
-  margin-top: 2px;
-  margin-bottom: 2px
+  border-radius: 5px 10px 10px 5px;
+  margin-left: 0px;
+  margin-top: 3px;
+  margin-bottom: 3px
 }
 @import "./waybar-mediaplayer/src/style.css";
 
