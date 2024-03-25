@@ -151,7 +151,7 @@
     //     "hwmon-path-abs": "/sys/class/hwmon/hwmon2/temp1_input",
 	  //   "input-filename": "temp1_input",
     "format": "{icon} {usage}% ",
-    "format-alt": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}",
+    "format-alt": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}{icon16}{icon17}{icon18}{icon19}",
      "format-icons": [
           "<span color='#69ff94'>▁</span>", // green
           "<span color='#2aa9ff'>▂</span>", // blue
@@ -162,7 +162,6 @@
           "<span color='#ff9977'>▇</span>", // orange
           "<span color='#dd532e'>█</span>"  // red
      ],
-         "max-length": 10,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         // "thermal-zone": 2,
          //"format-alt": "{temperatureC}°C"
@@ -257,13 +256,13 @@
         "on-scroll-down": "pamixer -d 1",
         "scroll-step": 1,
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "headphone": "󰋋",
+            "hands-free": "󰋎",
+            "headset": "󰥰",
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", "󰕾"]
+            "default": ["󰕿","󰖀","󰕾"]
         }
     },
     "pulseaudio#microphone": {
@@ -281,12 +280,10 @@
     "battery": {
 
     "interval": 60,
-   
     "format": "{capacity}%",
     "format-alt": "{power}",
         // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-     
+        // "format-full": "", 
     },
 
     "battery#icon": {
@@ -307,18 +304,19 @@
     "<span color='#9ece6a'>󰂂</span>", // green for full charge
     "<span color='#dd532e'>󰂃</span>"  // red for 100% charged
 ],
-      "charging": [
-        "<span color='#dd532e'>󰢟</span>", // Use the charging icon with the color for the lowest charge
-        "<span color='#dd532e'>󰢜</span>", // Another color for a slightly higher charge
-        "<span color='#ff9977'>󰂆</span>", // Orange for medium-low charge
-        "<span color='#ffffa5'>󰂇</span>", // Yellow for medium charge
-        "<span color='#ffffa5'>󰂈</span>", // Yellow for medium-high charge
-        "<span color='#ffffa5'>󰢝</span>", // Another yellow for medium-high charge
-        "<span color='#9ece6a'>󰂉</span>", // Green for higher charge
-        "<span color='#9ece6a'>󰢞</span>", // Green for even higher charge
-        "<span color='#9ece6a'>󰂊</span>", // Green for full charge or nearly full
-        "<span color='#9ece6a'>󰂋</span>", // Green for full charge
-        "<span color='#dd532e'>󰂅</span>"  // Red for 100% charged and plugged in
+      "charging": 
+      [
+    "<span color='#dd532e'>󰢟</span>", // Use the charging icon with the color for the lowest charge
+    "<span color='#dd532e'>󰢜</span>", // Another color for a slightly higher charge
+    "<span color='#ff9977'>󰂆</span>", // Orange for medium-low charge
+    "<span color='#ffffa5'>󰂇</span>", // Yellow for medium charge
+    "<span color='#ffffa5'>󰂈</span>", // Yellow for medium-high charge
+    "<span color='#ffffa5'>󰢝</span>", // Another yellow for medium-high charge
+    "<span color='#9ece6a'>󰂉</span>", // Green for higher charge
+    "<span color='#9ece6a'>󰢞</span>", // Green for even higher charge
+    "<span color='#9ece6a'>󰂊</span>", // Green for full charge or nearly full
+    "<span color='#9ece6a'>󰂋</span>", // Green for full charge
+    "<span color='#dd532e'>󰂅</span>"  // Red for 100% charged and plugged in
     ]
     
     },
@@ -330,10 +328,10 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{icon}",
-        "on-click": "./.config/wofi/wifimenu.sh",
+        "format-alt": " {bandwidthUpBytes}    {bandwidthDownBytes}",
         "format-icons": ["󰤯", "󰤟", "󰤟", "󰤥", "󰤨"],
         "format-disconnected" : "󰤫",
-        "format-ethernet": "󰈀"
+        "format-ethernet": "󰌗"
 
     },
 
