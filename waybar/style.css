@@ -211,16 +211,17 @@ window#waybar {
     border-right: none;
     padding: 0px 5px 0px 0px;
      margin: 5px 0px 5px 0px;
+
 }
 
 #pulseaudio.microphone {
+  color: @text-color-primary;
   border: 1px solid @border-color-secondary;
   border-left: none;
    border-radius: 0px 20px 10px 0px;
    padding: 0px 5px 0px 0px;
 
 }
-
 
 #pulseaudio.muted {
      color: @muted-text-color;
@@ -239,6 +240,11 @@ window#waybar {
        border-radius: 0px 20px 10px 0px;
 
 }
+
+
+
+
+
 
 
 

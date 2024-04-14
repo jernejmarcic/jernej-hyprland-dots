@@ -176,7 +176,7 @@
     "disk": {
     "format": "󰋊 {percentage_used}%",
     "format-alt": "󰋊 {used}/{total}",
-    "interval": 90,
+    "interval": 900,
     "tooltip": true,
     "tooltip-format": "Free space: {free}",
     "path": "/"

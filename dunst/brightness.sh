@@ -9,43 +9,42 @@ brightness_icon_high="display-brightness-high-symbolic"
 brightness_icon_medium="display-brightness-medium-symbolic"
 brightness_icon_low="display-brightness-low-symbolic"
 
-get_brightness () {
-    b=$(light | grep -oE '^[0-9]+')
+get_brightness() {
+	b=$(light | grep -oE '^[0-9]+')
 }
 
-send_notification () {
+send_notification() {
 	# Send the notification
-    dunstify -i "$brightnessicon" -t 1600 -h string:x-dunst-stack-tag:brightness -u normal "Brightness" -h int:value:"$b"
+	dunstify -i "$brightnessicon" -t 1600 -h string:x-dunst-stack-tag:brightness -u normal "Brightness" -h int:value:"$b"
 }
-brightness_check () {
-    get_brightness
-    if [ "$b" -ge 70 ]; then
-        brightnessicon="$brightness_icon_high"
-        changevalue="10"
-    elif [ "$b" -ge 50 ]; then
-        brightnessicon="$brightness_icon_medium"
-    	changevalue="10"
-    elif [ "$b" -ge 10 ]; then
-        brightnessicon="$brightness_icon_low"
-    	changevalue="5"
-    elif [ "$b" -ge 5 ]; then
-	brightnessicon="$brightness_icon_low"
-        changevalue="2"
-    else
-        brightnessicon="$brightness_icon_low"
-    	changevalue="1"
-    fi
+brightness_check() {
+	get_brightness
+	if [ "$b" -ge 70 ]; then
+		brightnessicon="$brightness_icon_high"
+		changevalue="10"
+	elif [ "$b" -ge 50 ]; then
+		brightnessicon="$brightness_icon_medium"
+		changevalue="10"
+	elif [ "$b" -ge 10 ]; then
+		brightnessicon="$brightness_icon_low"
+		changevalue="5"
+	elif [ "$b" -ge 5 ]; then
+		brightnessicon="$brightness_icon_low"
+		changevalue="2"
+	else
+		brightnessicon="$brightness_icon_low"
+		changevalue="1"
+	fi
 }
 case $1 in
-    up)
+up)
 	brightness_check
-        brightnessctl -d nvidia_wmi_ec_backlight s +2% 
-        send_notification
-        ;;
-    down)
+	brightnessctl -d nvidia_wmi_ec_backlight s +2%
+	send_notification
+	;;
+down)
 	brightness_check
-    brightnessctl -d nvidia_wmi_ec_backlight s 2%-
-        send_notification
-        ;;
+	brightnessctl -d nvidia_wmi_ec_backlight s 2%-
+	send_notification
+	;;
 esac
-
