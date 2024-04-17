@@ -5,10 +5,10 @@
     geometry = "300x0-0+0"
     notification_height = 100  # Adjust as needed
     separator_height = 0  # Set to 0 to remove the separator line
-    padding = 15  # Increase padding for a larger notification box
+    padding = 5  # Increase padding for a larger notification box
     horizontal_padding = 15  # Same as above
     text_icon_padding = 0
-    frame_width = 4  # Increased border thickness
+    frame_width = 2  # Increased border thickness
     frame_color = "#6C5B7B88"  # Cappuccino purple variant with transparency
     separator_color = frame
     sort = yes
@@ -30,20 +30,21 @@
     browser = /usr/bin/firefox --new-tab
     title = Dunst
     class = Dunst
-    corner_radius = 15  # More rounded corners
+    corner_radius = 0  # More rounded corners
     timeout = 5
 
 [urgency_low]
-    background = "#2c1d3b88"  # Deep-dark purple with transparency
-    foreground = "#CDD6F4"    # Cappuccino foreground color
+background = "#1A2632CC"  # Dark Oceanic with transparency
+foreground = "#CDD6F4"    # Cappuccino foreground color
 
 [urgency_normal]
-    background = "#2c1d3b88"  # Same as urgency_low
-    foreground = "#CDD6F4"    # Same as urgency_low
+background = "#1A2632CC"  # Same as urgency_low
+foreground = "#CDD6F4"    # Same as urgency_low
 
 [urgency_critical]
-    background = "#2c1d3b88"  # Same as urgency_low
-    foreground = "#CDD6F4"    # Same as urgency_low
-    frame_color = "#6C5B7B88"  # Cappuccino purple variant with transparency
+background = "#1A2632CC"  # Same as urgency_low
+foreground = "#CDD6F4"    # Same as urgency_low
+frame_color = "#6C5B7BCC"  # Cappuccino purple variant with transparency
+
 
 

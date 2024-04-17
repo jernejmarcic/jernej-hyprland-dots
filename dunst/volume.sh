@@ -5,34 +5,23 @@
 # $./volume.sh down
 # $./volume.sh mute
 
-function get_volume {
-	amixer get Master | grep '%' | head -n 1 | cut -d '[' -f 2 | cut -d '%' -f 1
-}
-
 function is_mute {
-	amixer get Master | grep '%' | grep -oE '[^ ]+$' | grep off >/dev/null
+	pamixer --get-mute
 }
 
 function send_notification {
-	volume=$(get_volume)
-	# Make the bar with the special character ─ (it's not dash -)
-	# https://en.wikipedia.org/wiki/Box-drawing_character
-	bar=$(seq -s "─" $(($volume / 5)) | sed 's/[0-9]//g')
-	# Send the notification
-	dunstify -i audio-volume-muted-blocking -t 800 -r 2593 -u normal "    $bar"
+	volume=$(pamixer --get-volume)
+	dunstify -t 1600 -h string:x-dunst-stack-tag:volume -u normal "Volume" -h int:value:"$volume"
 }
 
 case $1 in
 up)
-	# Set the volume on (if it was muted)
-	amixer -D pulse set Master on >/dev/null
 	# Up the volume (+ 2%)
-	pamixer -i 2
+	pamixer -ui 2
 	canberra-gtk-play -f /usr/share/sounds/ocean/stereo/audio-volume-change.oga
 	send_notification
 	;;
 down)
-	amixer -D pulse set Master on >/dev/null
 	# Down the volume ( +2%)
 	pamixer -d 2
 	canberra-gtk-play -f /usr/share/sounds/ocean/stereo/audio-volume-change.oga
