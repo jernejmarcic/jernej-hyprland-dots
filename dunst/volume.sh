@@ -1,28 +1,32 @@
 #!/bin/bash
 
-# You can call this script like this:
-# $./volume.sh up
-# $./volume.sh down
-# $./volume.sh mute
-
-function is_mute {
-	pamixer --get-mute
-}
-
 function send_notification {
 	volume=$(pamixer --get-volume)
-	dunstify -t 1600 -h string:x-dunst-stack-tag:volume -u normal "Volume" -h int:value:"$volume"
+	icon="audio-volume-high"
+	if [[ $volume -lt 33 ]]; then
+		icon="audio-volume-low"
+	elif [[ $volume -lt 66 ]]; then
+		icon="audio-volume-medium"
+	fi
+	dunstify -t 1600 -h string:x-dunst-stack-tag:volume -u normal "Volume" -h int:value:"$volume" -i "$icon"
 }
 
+# Function to get the current audio output
+function get_audio_output {
+	output=$(pactl info | grep "Default Sink")
+	echo "$output"
+}
+
+# Main script
 case $1 in
 up)
-	# Up the volume (+ 2%)
+	# Increase the volume (+ 2%)
 	pamixer -ui 2
 	canberra-gtk-play -f /usr/share/sounds/ocean/stereo/audio-volume-change.oga
 	send_notification
 	;;
 down)
-	# Down the volume ( +2%)
+	# Decrease the volume (- 2%)
 	pamixer -d 2
 	canberra-gtk-play -f /usr/share/sounds/ocean/stereo/audio-volume-change.oga
 	send_notification
@@ -35,5 +39,9 @@ mute)
 	else
 		send_notification
 	fi
+	;;
+get_output)
+	# Get audio output
+	get_audio_output
 	;;
 esac

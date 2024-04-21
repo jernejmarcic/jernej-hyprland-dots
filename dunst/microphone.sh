@@ -9,7 +9,7 @@ function is_mute {
 
 function send_notification {
 	volume=$(pamixer --default-source --get-volume)
-	dunstify -i "" -t 1600 -h string:x-dunst-stack-tag:volume -u normal "Microphone volume" -h int:value:"$volume"
+	dunstify -i "/usr/share/icons/Papirus/22x22/panel/audio-input-microphone-high.svg" -t 1600 -h string:x-dunst-stack-tag:volume -u normal "Microphone volume" -h int:value:"$volume"
 }
 
 case $1 in
@@ -28,7 +28,7 @@ mute)
 	# Toggle mute
 	pamixer --default-source -t
 	if is_mute; then
-		dunstify -i " " -t 1900 -u normal "Microphone Mute"
+		dunstify -i "/usr/share/icons/Papirus-Light/22x22/panel/audio-input-microphone-muted.svg" -t 1900 -u normal "Microphone Mute"
 	else
 		send_notification
 	fi

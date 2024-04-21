@@ -168,7 +168,7 @@
      },
      "memory": {
          "interval": 30,
-         "format": "  {}%",
+         "format": "   {}%",
          "format-alt":"  {used:0.1f}G",
          "max-length": 10
      },
@@ -185,6 +185,8 @@
     "backlight": {
         "exec": "light -G",
         "format": "| {percent}% {icon}  |",
+        "on-scroll-up": "/home/jernej/.config/dunst/brightness.sh up",
+        "on-scroll-down": "/home/jernej/.config/dunst/brightness.sh down",
         "format-icons": //note you can only have one icon set actiave at a time, commnet out the one you are not using 
     // ["", "", "", "", "", "", "", "", ""] //moonphase icons
     ["󰛩","󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󰛨"] //lightblulb icons

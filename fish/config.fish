@@ -18,9 +18,9 @@ alias l="lsd -lah"
 alias $(date "+%Y")='echo YEAR OF THE LINUX DESKTOP!'
 
 # Pacman stuff
-alias pm='sudo pacman'
+alias pm='/home/jernej/Scripts/pm'
 
-alias school='cd ~/Nextcloud/Documents/One-Vault/GimB/'
+alias school='cd ~/Documents/One-Vault/GimB/'
 
 # Binary path
 set -x PATH $PATH /home/jernej/.cargo/bin /home/jernej/.local/share/gem/ruby/3.0.0/bin /home/jernej/CLionProjects/oxiplayer/target/debug /home/jernej/CLionProjects/rustyplayer/target/debug /home/jernej/.local/bin $HOME/Scripts
