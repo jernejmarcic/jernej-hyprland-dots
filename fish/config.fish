@@ -18,7 +18,7 @@ alias l="lsd -lah"
 alias $(date "+%Y")='echo YEAR OF THE LINUX DESKTOP!'
 
 # Pacman stuff
-alias pm='/home/jernej/Scripts/pm'
+alias pm='sudo pacman'
 
 alias school='cd ~/Documents/One-Vault/GimB/'
 
