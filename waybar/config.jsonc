@@ -18,7 +18,7 @@
     // "custom/playerctl", "custom/playerlabel"
 	
     ],
-    "modules-center": ["hyprland/workspaces"],
+    "modules-center": ["hyprland/workspaces"/*, "hyprland/window"*/],
     "modules-right": [
         "custom/weather",
         "tray",
@@ -40,63 +40,12 @@
     "hyprland/workspaces": {
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1",
-    // Icons for 20 workspaces? Why wou may ask, Why not I anwser.
-    "1": "1",
-    "2": "2",
-    "3": "3",
-    "4": "4",
-    "5": "5",
-    "6": "6",
-    "7": "7",
-    "8": "8",
-    "9": "9",
-    "10": "10",
-    "11": "11",
-    "12": "12",
-    "13": "13",
-    "14": "14",
-    "15": "15",
-    "16": "16",
-    "17": "17",
-    "18": "18",
-    "19": "19",
-    "20": "20",
-
-
-
         "all-outputs": true,
         "on-click": "activate",
         "format": "{icon}",
-        "format-icons": {
-      "1": "1",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7",
-      "8": "8",
-      "9": "9",
-      "10": "10",
-      "11": "11",
-      "12": "12",
-      "13": "13",
-      "14": "14",
-      "15": "15",
-      "16": "16",
-      "17": "17",
-      "18": "18",
-      "19": "19",
-      "20": "20",
-
- 
-
-
-            "urgent": "<span color='#dd532e'></span>", // The explamation point is now red to draw more attention to it
-            // "active": "",
-            "default": ""
-          }
-    },
+        "urgent": "<span color='#dd532e'></span>", // The explamation point is now red to draw more attention to it
+        "default": "{icon}",
+  },
 
 
   "image": {
