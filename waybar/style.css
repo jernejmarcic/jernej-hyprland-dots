@@ -330,6 +330,18 @@ window#waybar {
     font-weight: bold;
 }
 
+#custom-gpu{
+    background-color:@bg-color-primary;
+        border: 1px solid @border-color-secondary;
+    border-right: none;
+    border-left: none;
+    /*color: #FABD2D;*/
+    padding: 0px 5px 0px 0px;
+     margin: 5px 0px 5px 0px;
+
+    font-weight: bold;
+}
+
 #memory {
     background-color:@bg-color-primary;
         border: 1px solid @border-color-secondary;

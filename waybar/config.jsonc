@@ -10,6 +10,7 @@
     "clock",
     "clock#calendar",
         "cpu",
+    "custom/gpu",
         "memory",
         "disk",
      "image", "custom/mediaplayer"
@@ -40,11 +41,15 @@
     "hyprland/workspaces": {
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "active-only": false,
+        "disable-scroll": false,
         "all-outputs": true,
         "on-click": "activate",
+        "format-icons": { 
         "format": "{icon}",
         "urgent": "<span color='#dd532e'></span>", // The explamation point is now red to draw more attention to it
         "default": "{icon}",
+    }
   },
 
 
@@ -94,6 +99,25 @@
       },
     },
  */
+
+    "custom/gpu": {
+    "interval": 5,
+    "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+    "format": " {icon} {}%",
+    "exec-alt": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits",
+    "format-alt": "{}",
+    "format-icons": [
+          "<span color='#69ff94'>▁</span>", // green
+          "<span color='#2aa9ff'>▂</span>", // blue
+          "<span color='#f8f8f2'>▃</span>", // white
+          "<span color='#f8f8f2'>▄</span>", // white
+          "<span color='#ffffa5'>▅</span>", // yellow
+          "<span color='#ffffa5'>▆</span>", // yellow
+          "<span color='#ff9977'>▇</span>", // orange
+          "<span color='#dd532e'>█</span>"  // red
+     ],
+
+      },
     
      "cpu": {
          "interval": 5,
@@ -128,7 +152,7 @@
     "interval": 900,
     "tooltip": true,
     "tooltip-format": "Free space: {free}",
-    "path": "/"
+    "path": "/home"
   },
 
     "backlight": {
@@ -204,9 +228,9 @@
         "format": "{icon} {volume}%",
         "tooltip": false,
         "format-muted": "󰸈 Muted",
-        "on-click": "pamixer -t",
-        "on-scroll-up": "pamixer -i 1",
-        "on-scroll-down": "pamixer -d 1",
+        "on-click": " ~/.config/dunst/volume.sh mute",
+        "on-scroll-up": "~/.config/dunst/volume.sh up",
+        "on-scroll-down": "~/.config/dunst/volume.sh down",
         "scroll-step": 1,
         "format-icons": {
             "headphone": "󰋋",
@@ -284,12 +308,13 @@
         "format-alt": " {bandwidthUpBytes}    {bandwidthDownBytes}",
         "format-icons": ["󰤯", "󰤟", "󰤟", "󰤥", "󰤨"],
         "format-disconnected" : "󰤫",
-        "format-ethernet": "󰌗"
+        "format-ethernet": " 󰌗"
 
     },
 
     "network#wifistrenght" : {
     "format-wifi": "{signalStrength}%",
+    "format-ethernet": "",
 
    // "format-ethernet": "{ipaddr}/{cidr}",
     "tooltip-format": "{ifname} via {gwaddr} ",
