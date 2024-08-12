@@ -298,7 +298,7 @@
     
     },
     "format-charging": "{icon}",
-    "format-plugged": "{capacity}% ",
+    "format-plugged": "",
     "format-alt": "{time} {icon}"
     },
 
@@ -308,7 +308,9 @@
         "format-alt": " {bandwidthUpBytes}    {bandwidthDownBytes}",
         "format-icons": ["󰤯", "󰤟", "󰤟", "󰤥", "󰤨"],
         "format-disconnected" : "󰤫",
-        "format-ethernet": " 󰌗"
+        "format-ethernet": " 󰌗",
+        "tooltip": true,
+        "tooltip-format": "{essid}"
 
     },
 
